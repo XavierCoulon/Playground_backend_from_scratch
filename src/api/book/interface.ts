@@ -5,6 +5,7 @@ import { Book } from ".prisma/client";
 type BookBody = {
   title: string;
   content: string;
+  picture: string;
   categoryId: string;
   authorId: string;
 };
