@@ -4,7 +4,7 @@ import prisma from "../../../../prisma/client";
 const updateBook: BookHandlers["update"] = async (req, res) => {
   try {
     const { id } = req.params;
-    const { title, content, categoryId, authorId } = req.body;
+    const { title, content, picture, categoryId, authorId } = req.body;
     const book = await prisma.book.update({
       where: {
         id: id,
@@ -12,6 +12,7 @@ const updateBook: BookHandlers["update"] = async (req, res) => {
       data: {
         title: title,
         content: content,
+        picture: picture,
         categoryId: categoryId,
         authorId: authorId,
       },
